@@ -2,7 +2,7 @@
 title: The NEXT Challenger Niches inside ML
 emoji: 🧬
 colorFrom: green
-colorTo: teal
+colorTo: blue
 sdk: static
 app_file: index.html
 pinned: true
