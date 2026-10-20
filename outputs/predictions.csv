@@ -1,0 +1,19 @@
+,sector,challenger_prob,verdict,label_true,share_gain,score,growth_momentum,market_scale
+Indoor & Vertical Farming Optimization,Agriculture,0.992,Predicted challenger,1.0,0.03905705093600655,68.0,0.31051346863839124,1.2052678009312154
+Autonomous Equipment & Field Robotics,Agriculture,0.982,Predicted challenger,1.0,0.05434539435152791,78.5,0.3133861547934482,2.027115138895958
+Livestock Monitoring & Health Vision,Agriculture,0.964,Predicted challenger,1.0,0.03998717273524914,62.7,0.2837459849704487,1.4409897673538619
+ML-Guided Seed Breeding & Gene Editing,Agriculture,0.9003333333333332,Predicted challenger,1.0,0.039633407220966234,63.4,0.3051985854658359,1.043529126492154
+Carbon & Sustainability Analytics (MRV),Agriculture,0.32430000000000003,Established / holding,0.0,0.026828600433937918,73.7,0.36280242966518284,0.8625823440836884
+Pest & Disease Early Warning,Agriculture,0.05,Established / holding,0.0,-0.04309793752955929,10.0,0.12046880498394641,0.5156816771160775
+Remote Sensing & Crop Scouting,Agriculture,0.0,Established / holding,0.0,-0.08232938846618351,24.3,0.10571981044946321,1.2632500169258205
+Yield Prediction & Farm Analytics,Agriculture,0.0,Established / holding,0.0,-0.07442429968194492,25.4,0.13257103960940064,1.2287858577514688
+Genomics & Precision Medicine,Healthcare,0.986,Predicted challenger,1.0,0.039533672227537245,48.0,0.3092903952844128,8.972396473674
+Drug Discovery & Development,Healthcare,0.9431333333333332,Predicted challenger,1.0,0.06916094481899725,55.0,0.3114896782443326,14.395332671883038
+Remote Patient Monitoring & Wearables,Healthcare,0.928,Predicted challenger,1.0,0.03203775341836079,43.1,0.3232571913128415,6.848878852766116
+Virtual Assistants & Mental-Health AI,Healthcare,0.8268333333333334,Predicted challenger,1.0,0.02526076792629748,49.6,0.3435686979849626,4.961857355928766
+Ambient Clinical Documentation,Healthcare,0.682,Predicted challenger,1.0,0.023066900045774955,81.5,0.5095801162689573,5.333119375543824
+Synthetic Data & Trial Digital Twins,Healthcare,0.2594666666666667,Established / holding,0.0,0.015939542946606648,47.5,0.3815664059919395,3.057772034710517
+Outbreak & Epidemiological Forecasting,Healthcare,0.11,Established / holding,0.0,-0.005067066170299832,5.8,0.16765330214006235,1.104592296597211
+Admin Automation & Revenue Cycle,Healthcare,0.034,Established / holding,0.0,-0.054952311839428974,20.8,0.15333314698697764,6.298951892047242
+Medical Imaging & Diagnostics,Healthcare,0.026,Established / holding,0.0,-0.06382136685348741,32.1,0.140608801759742,9.48214481285536
+Clinical Decision Support,Healthcare,0.0,Established / holding,0.0,-0.08115883652035824,14.5,0.10889402023804728,4.970350463032886

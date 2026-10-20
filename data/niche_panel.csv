@@ -1,0 +1,199 @@
+niche,sector,year,market_size_usd_b,investment_usd_b,job_postings_k,adoption_rate_pct,ai_patents_k
+Medical Imaging & Diagnostics,Healthcare,2015,1.0138,0.5239,2.0765,14.45,0.3926
+Medical Imaging & Diagnostics,Healthcare,2016,1.1044,0.6182,2.3033,21.21,0.5087
+Medical Imaging & Diagnostics,Healthcare,2017,1.4266,0.8386,2.7469,32.0,0.6696
+Medical Imaging & Diagnostics,Healthcare,2018,1.5448,0.895,3.0533,43.2,0.7749
+Medical Imaging & Diagnostics,Healthcare,2019,1.8647,1.0245,3.984,53.78,0.9056
+Medical Imaging & Diagnostics,Healthcare,2020,2.2539,1.3452,4.6444,64.1,1.154
+Medical Imaging & Diagnostics,Healthcare,2021,2.8392,1.6177,5.0006,70.65,1.4029
+Medical Imaging & Diagnostics,Healthcare,2022,3.1766,1.8604,5.7556,75.86,1.6876
+Medical Imaging & Diagnostics,Healthcare,2023,3.6558,2.2494,6.7931,80.08,1.9508
+Medical Imaging & Diagnostics,Healthcare,2024,4.1811,2.65,8.3092,82.52,2.3329
+Medical Imaging & Diagnostics,Healthcare,2025,4.9116,3.0992,8.9381,82.97,2.696
+Clinical Decision Support,Healthcare,2015,0.7773,0.3823,1.7242,8.61,0.321
+Clinical Decision Support,Healthcare,2016,0.8462,0.4188,1.855,14.7,0.3721
+Clinical Decision Support,Healthcare,2017,1.0794,0.5391,2.0676,21.66,0.4122
+Clinical Decision Support,Healthcare,2018,1.1221,0.54,2.3241,29.85,0.4978
+Clinical Decision Support,Healthcare,2019,1.3987,0.7093,2.8207,39.5,0.5692
+Clinical Decision Support,Healthcare,2020,1.5792,0.7976,3.1603,48.25,0.6312
+Clinical Decision Support,Healthcare,2021,1.8044,0.9311,3.7032,57.41,0.8356
+Clinical Decision Support,Healthcare,2022,2.0754,1.106,4.1669,63.71,0.8492
+Clinical Decision Support,Healthcare,2023,2.1532,1.0769,4.6564,69.02,1.0584
+Clinical Decision Support,Healthcare,2024,2.5779,1.524,5.5292,72.67,1.2465
+Clinical Decision Support,Healthcare,2025,2.9644,1.5465,6.3641,74.97,1.3913
+Admin Automation & Revenue Cycle,Healthcare,2015,0.7138,0.4344,1.359,5.71,0.1508
+Admin Automation & Revenue Cycle,Healthcare,2016,0.7963,0.4918,1.6678,11.94,0.1711
+Admin Automation & Revenue Cycle,Healthcare,2017,0.9073,0.5669,2.0045,17.12,0.214
+Admin Automation & Revenue Cycle,Healthcare,2018,1.1247,0.7704,2.2231,22.59,0.2194
+Admin Automation & Revenue Cycle,Healthcare,2019,1.267,0.7429,2.8981,31.35,0.245
+Admin Automation & Revenue Cycle,Healthcare,2020,1.4351,0.9452,3.4839,42.07,0.3863
+Admin Automation & Revenue Cycle,Healthcare,2021,1.783,1.1023,3.5737,49.12,0.3452
+Admin Automation & Revenue Cycle,Healthcare,2022,2.0011,1.2845,4.6979,56.82,0.4286
+Admin Automation & Revenue Cycle,Healthcare,2023,2.7828,1.7676,6.1097,60.95,0.4899
+Admin Automation & Revenue Cycle,Healthcare,2024,2.9963,2.0717,7.037,64.74,0.525
+Admin Automation & Revenue Cycle,Healthcare,2025,3.0867,2.0578,8.8678,67.02,0.7017
+Drug Discovery & Development,Healthcare,2015,0.1824,0.164,0.9175,3.1,0.4986
+Drug Discovery & Development,Healthcare,2016,0.2472,0.2201,1.1261,4.18,0.5944
+Drug Discovery & Development,Healthcare,2017,0.3438,0.3343,1.4864,8.01,0.8621
+Drug Discovery & Development,Healthcare,2018,0.4848,0.4431,1.8491,13.29,1.132
+Drug Discovery & Development,Healthcare,2019,0.6564,0.6106,2.2724,17.19,1.603
+Drug Discovery & Development,Healthcare,2020,0.9758,0.9059,3.3371,26.84,1.718
+Drug Discovery & Development,Healthcare,2021,1.12,1.1143,4.1138,34.0,2.386
+Drug Discovery & Development,Healthcare,2022,1.4965,1.5899,5.0895,42.84,2.718
+Drug Discovery & Development,Healthcare,2023,1.9708,1.8659,6.1018,49.01,3.9844
+Drug Discovery & Development,Healthcare,2024,2.758,2.5873,8.3138,55.21,5.182
+Drug Discovery & Development,Healthcare,2025,3.7102,3.9705,11.3601,59.77,6.5652
+Genomics & Precision Medicine,Healthcare,2015,0.1485,0.113,0.8071,3.34,0.4025
+Genomics & Precision Medicine,Healthcare,2016,0.2,0.1771,1.1072,5.99,0.5018
+Genomics & Precision Medicine,Healthcare,2017,0.2447,0.1825,1.2903,11.33,0.6228
+Genomics & Precision Medicine,Healthcare,2018,0.335,0.231,1.5873,14.74,0.8083
+Genomics & Precision Medicine,Healthcare,2019,0.4378,0.3465,1.8467,21.28,1.2463
+Genomics & Precision Medicine,Healthcare,2020,0.5673,0.4292,2.785,32.97,1.2662
+Genomics & Precision Medicine,Healthcare,2021,0.7804,0.6533,3.4902,38.56,1.7293
+Genomics & Precision Medicine,Healthcare,2022,1.0847,0.9267,3.9584,47.44,2.0452
+Genomics & Precision Medicine,Healthcare,2023,1.3678,1.1373,5.1416,53.97,2.979
+Genomics & Precision Medicine,Healthcare,2024,1.9101,1.6533,6.5172,59.68,3.6894
+Genomics & Precision Medicine,Healthcare,2025,2.332,2.0687,8.0294,65.0,5.2722
+Ambient Clinical Documentation,Healthcare,2015,0.0102,0.0087,0.3311,1.03,0.1019
+Ambient Clinical Documentation,Healthcare,2016,0.0155,0.013,0.5316,1.0,0.1342
+Ambient Clinical Documentation,Healthcare,2017,0.0226,0.0219,0.7378,1.0,0.2087
+Ambient Clinical Documentation,Healthcare,2018,0.0347,0.0345,1.1485,1.0,0.2998
+Ambient Clinical Documentation,Healthcare,2019,0.0538,0.0555,1.5187,1.38,0.4523
+Ambient Clinical Documentation,Healthcare,2020,0.0877,0.0835,2.3424,6.29,0.6382
+Ambient Clinical Documentation,Healthcare,2021,0.1176,0.1239,3.4714,15.0,1.0492
+Ambient Clinical Documentation,Healthcare,2022,0.1977,0.2246,5.1465,29.16,1.4281
+Ambient Clinical Documentation,Healthcare,2023,0.3655,0.4184,8.5864,48.74,1.7994
+Ambient Clinical Documentation,Healthcare,2024,0.4486,0.5208,10.5151,66.29,3.2186
+Ambient Clinical Documentation,Healthcare,2025,0.6803,0.7488,14.3316,76.39,3.9621
+Remote Patient Monitoring & Wearables,Healthcare,2015,0.0963,0.0651,0.5794,2.03,0.2506
+Remote Patient Monitoring & Wearables,Healthcare,2016,0.1142,0.0724,0.7557,5.49,0.3287
+Remote Patient Monitoring & Wearables,Healthcare,2017,0.1458,0.0994,0.9259,7.53,0.4444
+Remote Patient Monitoring & Wearables,Healthcare,2018,0.1973,0.1295,1.1783,9.82,0.5545
+Remote Patient Monitoring & Wearables,Healthcare,2019,0.295,0.2141,1.3786,17.13,0.6791
+Remote Patient Monitoring & Wearables,Healthcare,2020,0.4401,0.3125,1.9969,22.7,0.7858
+Remote Patient Monitoring & Wearables,Healthcare,2021,0.5175,0.3763,2.2929,30.5,0.9917
+Remote Patient Monitoring & Wearables,Healthcare,2022,0.7463,0.5149,2.5957,39.68,1.3372
+Remote Patient Monitoring & Wearables,Healthcare,2023,0.9361,0.7423,3.5005,47.6,1.651
+Remote Patient Monitoring & Wearables,Healthcare,2024,1.3921,1.022,3.7622,54.23,1.938
+Remote Patient Monitoring & Wearables,Healthcare,2025,1.6881,1.3775,4.7597,56.41,2.2541
+Virtual Assistants & Mental-Health AI,Healthcare,2015,0.0482,0.0347,0.462,1.69,0.1359
+Virtual Assistants & Mental-Health AI,Healthcare,2016,0.0617,0.0442,0.5714,3.0,0.208
+Virtual Assistants & Mental-Health AI,Healthcare,2017,0.0944,0.072,0.7693,5.08,0.2488
+Virtual Assistants & Mental-Health AI,Healthcare,2018,0.1275,0.0959,1.0301,7.76,0.3578
+Virtual Assistants & Mental-Health AI,Healthcare,2019,0.174,0.1309,1.3397,11.91,0.4159
+Virtual Assistants & Mental-Health AI,Healthcare,2020,0.2596,0.1744,1.8574,21.99,0.5893
+Virtual Assistants & Mental-Health AI,Healthcare,2021,0.3335,0.2807,2.3211,31.44,0.8723
+Virtual Assistants & Mental-Health AI,Healthcare,2022,0.4548,0.3478,2.741,41.32,0.9843
+Virtual Assistants & Mental-Health AI,Healthcare,2023,0.6716,0.5781,4.4007,51.5,1.4211
+Virtual Assistants & Mental-Health AI,Healthcare,2024,0.8112,0.6982,4.7408,59.04,1.9475
+Virtual Assistants & Mental-Health AI,Healthcare,2025,1.1333,0.9366,5.8805,65.4,2.4822
+Synthetic Data & Trial Digital Twins,Healthcare,2015,0.0198,0.0162,0.2546,2.31,0.1172
+Synthetic Data & Trial Digital Twins,Healthcare,2016,0.0262,0.0228,0.3295,3.03,0.1664
+Synthetic Data & Trial Digital Twins,Healthcare,2017,0.039,0.0331,0.4949,5.27,0.2198
+Synthetic Data & Trial Digital Twins,Healthcare,2018,0.0553,0.0501,0.5766,6.25,0.2947
+Synthetic Data & Trial Digital Twins,Healthcare,2019,0.0779,0.0642,0.7445,8.01,0.3686
+Synthetic Data & Trial Digital Twins,Healthcare,2020,0.1212,0.1052,1.3684,15.87,0.503
+Synthetic Data & Trial Digital Twins,Healthcare,2021,0.153,0.1345,1.4269,22.1,0.7586
+Synthetic Data & Trial Digital Twins,Healthcare,2022,0.2076,0.2034,1.8318,30.01,1.1762
+Synthetic Data & Trial Digital Twins,Healthcare,2023,0.2981,0.3045,2.6108,38.51,1.3186
+Synthetic Data & Trial Digital Twins,Healthcare,2024,0.4101,0.3741,3.5582,44.33,1.8725
+Synthetic Data & Trial Digital Twins,Healthcare,2025,0.6075,0.6056,4.6002,50.7,2.3612
+Outbreak & Epidemiological Forecasting,Healthcare,2015,0.0939,0.0463,0.295,5.17,0.0721
+Outbreak & Epidemiological Forecasting,Healthcare,2016,0.1139,0.0664,0.3357,9.21,0.0767
+Outbreak & Epidemiological Forecasting,Healthcare,2017,0.1244,0.0799,0.4126,15.04,0.1151
+Outbreak & Epidemiological Forecasting,Healthcare,2018,0.1414,0.0775,0.4706,21.9,0.1389
+Outbreak & Epidemiological Forecasting,Healthcare,2019,0.1833,0.1071,0.5248,30.17,0.1738
+Outbreak & Epidemiological Forecasting,Healthcare,2020,0.2673,0.1429,0.8757,36.97,0.2019
+Outbreak & Epidemiological Forecasting,Healthcare,2021,0.2505,0.1549,0.7357,44.29,0.241
+Outbreak & Epidemiological Forecasting,Healthcare,2022,0.2992,0.1611,0.8291,50.1,0.2284
+Outbreak & Epidemiological Forecasting,Healthcare,2023,0.3725,0.2064,1.0416,52.02,0.2846
+Outbreak & Epidemiological Forecasting,Healthcare,2024,0.3992,0.2185,1.1551,56.7,0.3486
+Outbreak & Epidemiological Forecasting,Healthcare,2025,0.5089,0.2978,1.2583,59.33,0.4386
+Remote Sensing & Crop Scouting,Agriculture,2015,0.2238,0.1157,0.3045,12.41,0.1193
+Remote Sensing & Crop Scouting,Agriculture,2016,0.2452,0.1178,0.3248,15.28,0.1319
+Remote Sensing & Crop Scouting,Agriculture,2017,0.28,0.1443,0.3909,22.95,0.175
+Remote Sensing & Crop Scouting,Agriculture,2018,0.3282,0.165,0.4302,32.78,0.1947
+Remote Sensing & Crop Scouting,Agriculture,2019,0.3361,0.1707,0.5134,41.07,0.2279
+Remote Sensing & Crop Scouting,Agriculture,2020,0.3796,0.2109,0.6148,50.58,0.2699
+Remote Sensing & Crop Scouting,Agriculture,2021,0.411,0.1975,0.6489,57.55,0.3236
+Remote Sensing & Crop Scouting,Agriculture,2022,0.5662,0.2732,0.7199,64.45,0.4031
+Remote Sensing & Crop Scouting,Agriculture,2023,0.5536,0.2924,0.9374,67.1,0.3852
+Remote Sensing & Crop Scouting,Agriculture,2024,0.6484,0.3287,1.016,71.41,0.4354
+Remote Sensing & Crop Scouting,Agriculture,2025,0.7643,0.388,1.1853,72.52,0.5517
+Yield Prediction & Farm Analytics,Agriculture,2015,0.1844,0.0869,0.2863,7.23,0.1038
+Yield Prediction & Farm Analytics,Agriculture,2016,0.1954,0.0896,0.2947,13.49,0.1087
+Yield Prediction & Farm Analytics,Agriculture,2017,0.2196,0.1042,0.3619,18.87,0.1464
+Yield Prediction & Farm Analytics,Agriculture,2018,0.2594,0.1187,0.4095,26.69,0.1572
+Yield Prediction & Farm Analytics,Agriculture,2019,0.2937,0.1315,0.4887,35.17,0.1477
+Yield Prediction & Farm Analytics,Agriculture,2020,0.3678,0.1977,0.5055,43.27,0.1968
+Yield Prediction & Farm Analytics,Agriculture,2021,0.3839,0.176,0.5514,53.1,0.24
+Yield Prediction & Farm Analytics,Agriculture,2022,0.4134,0.2009,0.7299,59.0,0.2598
+Yield Prediction & Farm Analytics,Agriculture,2023,0.4996,0.2427,0.6827,63.55,0.2977
+Yield Prediction & Farm Analytics,Agriculture,2024,0.6212,0.2893,0.9143,65.66,0.3666
+Yield Prediction & Farm Analytics,Agriculture,2025,0.6594,0.296,0.9589,69.56,0.3955
+Livestock Monitoring & Health Vision,Agriculture,2015,0.0278,0.0181,0.0956,1.47,0.0795
+Livestock Monitoring & Health Vision,Agriculture,2016,0.0361,0.0216,0.127,2.55,0.0842
+Livestock Monitoring & Health Vision,Agriculture,2017,0.0525,0.0358,0.1484,3.91,0.1347
+Livestock Monitoring & Health Vision,Agriculture,2018,0.067,0.0525,0.1947,8.46,0.1582
+Livestock Monitoring & Health Vision,Agriculture,2019,0.0889,0.0637,0.2517,12.5,0.1956
+Livestock Monitoring & Health Vision,Agriculture,2020,0.1177,0.0864,0.3412,19.13,0.2466
+Livestock Monitoring & Health Vision,Agriculture,2021,0.1469,0.1029,0.3812,25.83,0.3021
+Livestock Monitoring & Health Vision,Agriculture,2022,0.1817,0.1141,0.4296,35.64,0.3977
+Livestock Monitoring & Health Vision,Agriculture,2023,0.2573,0.1856,0.5309,44.45,0.547
+Livestock Monitoring & Health Vision,Agriculture,2024,0.3045,0.2142,0.7127,50.91,0.6701
+Livestock Monitoring & Health Vision,Agriculture,2025,0.4133,0.3252,0.8161,55.84,0.795
+Autonomous Equipment & Field Robotics,Agriculture,2015,0.0331,0.0241,0.1242,1.72,0.1303
+Autonomous Equipment & Field Robotics,Agriculture,2016,0.046,0.0402,0.136,2.04,0.1706
+Autonomous Equipment & Field Robotics,Agriculture,2017,0.0651,0.0551,0.2011,4.24,0.2188
+Autonomous Equipment & Field Robotics,Agriculture,2018,0.0821,0.07,0.2526,7.92,0.3136
+Autonomous Equipment & Field Robotics,Agriculture,2019,0.107,0.0971,0.325,10.97,0.3417
+Autonomous Equipment & Field Robotics,Agriculture,2020,0.1467,0.1392,0.3767,16.43,0.5234
+Autonomous Equipment & Field Robotics,Agriculture,2021,0.1931,0.1937,0.5167,24.58,0.6348
+Autonomous Equipment & Field Robotics,Agriculture,2022,0.2445,0.2207,0.6078,34.19,0.9954
+Autonomous Equipment & Field Robotics,Agriculture,2023,0.3395,0.3011,0.8476,40.54,1.178
+Autonomous Equipment & Field Robotics,Agriculture,2024,0.4505,0.4474,1.0702,47.03,1.5205
+Autonomous Equipment & Field Robotics,Agriculture,2025,0.5187,0.5084,1.2739,50.56,2.1711
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2015,0.0151,0.014,0.0608,2.17,0.1601
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2016,0.0191,0.0156,0.0796,1.9,0.1928
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2017,0.0255,0.0226,0.1109,3.86,0.279
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2018,0.0348,0.032,0.1305,4.37,0.3641
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2019,0.045,0.0391,0.1758,8.83,0.4286
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2020,0.0624,0.0637,0.2349,14.14,0.6429
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2021,0.0816,0.0754,0.2946,20.07,0.9262
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2022,0.1322,0.1326,0.3892,27.15,1.1343
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2023,0.1531,0.1531,0.4957,34.88,1.4113
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2024,0.2115,0.2191,0.6441,42.51,1.7974
+ML-Guided Seed Breeding & Gene Editing,Agriculture,2025,0.2755,0.3267,0.7805,46.07,2.2556
+Carbon & Sustainability Analytics (MRV),Agriculture,2015,0.008,0.006,0.0497,1.55,0.0415
+Carbon & Sustainability Analytics (MRV),Agriculture,2016,0.0112,0.0095,0.0624,1.0,0.0645
+Carbon & Sustainability Analytics (MRV),Agriculture,2017,0.0146,0.0114,0.0936,3.35,0.0903
+Carbon & Sustainability Analytics (MRV),Agriculture,2018,0.0229,0.0188,0.1255,3.26,0.1269
+Carbon & Sustainability Analytics (MRV),Agriculture,2019,0.0295,0.0301,0.1584,5.22,0.1831
+Carbon & Sustainability Analytics (MRV),Agriculture,2020,0.0394,0.0333,0.2097,9.75,0.2372
+Carbon & Sustainability Analytics (MRV),Agriculture,2021,0.0652,0.0596,0.3188,13.96,0.3315
+Carbon & Sustainability Analytics (MRV),Agriculture,2022,0.073,0.0617,0.3481,23.08,0.4099
+Carbon & Sustainability Analytics (MRV),Agriculture,2023,0.1092,0.0958,0.4516,30.88,0.5833
+Carbon & Sustainability Analytics (MRV),Agriculture,2024,0.147,0.1355,0.6308,39.16,0.6971
+Carbon & Sustainability Analytics (MRV),Agriculture,2025,0.1835,0.1848,0.7942,45.19,1.0802
+Indoor & Vertical Farming Optimization,Agriculture,2015,0.0182,0.0135,0.0757,1.75,0.0648
+Indoor & Vertical Farming Optimization,Agriculture,2016,0.0243,0.0186,0.0986,2.53,0.0795
+Indoor & Vertical Farming Optimization,Agriculture,2017,0.0307,0.0214,0.1244,7.52,0.1122
+Indoor & Vertical Farming Optimization,Agriculture,2018,0.0444,0.0312,0.1533,12.39,0.1318
+Indoor & Vertical Farming Optimization,Agriculture,2019,0.0573,0.0428,0.2002,19.69,0.1799
+Indoor & Vertical Farming Optimization,Agriculture,2020,0.0871,0.0648,0.2526,26.69,0.2231
+Indoor & Vertical Farming Optimization,Agriculture,2021,0.0963,0.0755,0.3291,35.37,0.3299
+Indoor & Vertical Farming Optimization,Agriculture,2022,0.1396,0.1182,0.4142,45.92,0.3455
+Indoor & Vertical Farming Optimization,Agriculture,2023,0.1737,0.13,0.5113,51.92,0.4986
+Indoor & Vertical Farming Optimization,Agriculture,2024,0.2551,0.2021,0.6537,57.83,0.6491
+Indoor & Vertical Farming Optimization,Agriculture,2025,0.3118,0.2602,0.8553,63.18,0.8445
+Pest & Disease Early Warning,Agriculture,2015,0.0822,0.0383,0.1195,6.77,0.0744
+Pest & Disease Early Warning,Agriculture,2016,0.0917,0.0486,0.1414,10.32,0.0843
+Pest & Disease Early Warning,Agriculture,2017,0.1014,0.0523,0.1371,14.44,0.0755
+Pest & Disease Early Warning,Agriculture,2018,0.1082,0.0564,0.1869,19.53,0.1094
+Pest & Disease Early Warning,Agriculture,2019,0.1412,0.07,0.2348,28.09,0.1396
+Pest & Disease Early Warning,Agriculture,2020,0.1783,0.0921,0.2525,36.2,0.1597
+Pest & Disease Early Warning,Agriculture,2021,0.1608,0.0816,0.2675,44.84,0.1894
+Pest & Disease Early Warning,Agriculture,2022,0.1917,0.0986,0.3228,51.22,0.2079
+Pest & Disease Early Warning,Agriculture,2023,0.2102,0.1169,0.3596,54.67,0.2714
+Pest & Disease Early Warning,Agriculture,2024,0.2553,0.1218,0.427,60.0,0.3187
+Pest & Disease Early Warning,Agriculture,2025,0.292,0.1411,0.4936,61.6,0.3542
