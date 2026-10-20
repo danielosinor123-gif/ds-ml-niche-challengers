@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A supervised challenger-detection model predicts which ML niches break out inside Healthcare & Agriculture — 18 niches, LOOCV AUC 0.90, paired with 2026-2030 ensemble forecasts.">
+<title>The NEXT Challenger Niches inside ML — Healthcare & Agriculture</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8fb;--surface:#fff;--surface2:#eef2f7;--text:#182231;--muted:#5b6b7c;--line:#e4eaf1;--teal:#00A499;--green:#1E8449;--blue:#1F6FB2;--red:#C0392B;--shadow:0 1px 3px rgba(16,32,48,.06),0 8px 24px rgba(16,32,48,.05);--font:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",Consolas,monospace}
+@media(prefers-color-scheme:dark){:root{--bg:#0c111e;--surface:#141c2f;--surface2:#1b2438;--text:#e8eef7;--muted:#97a6bb;--line:#243149;--green:#2ecc71;--blue:#4d9fdd}}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}.num{font-family:var(--mono)}
+.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid transparent;transition:.3s}
+.nav.scrolled{border-color:var(--line);box-shadow:var(--shadow)}
+.nav-inner{display:flex;align-items:center;gap:18px;height:60px}
+.brand{font-weight:800;font-size:15px;display:flex;align-items:center;gap:9px;text-decoration:none}
+.brand .mark{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#00A499,#27AE60);display:grid;place-items:center;color:#fff;font-size:12px}
+.nav-links{display:flex;gap:4px;margin-left:auto}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:13.5px;font-weight:600;padding:7px 12px;border-radius:8px}
+.nav-links a:hover{color:var(--text);background:var(--surface2)}
+.nav-cta{text-decoration:none;font-size:13px;font-weight:700;color:#fff;background:var(--text);padding:8px 14px;border-radius:9px}
+@media(max-width:780px){.nav-links{display:none}}
+.hero{background:linear-gradient(135deg,#10222e 0%,#0b4f4a 52%,#166534 100%);background-size:160% 160%;animation:drift 14s ease-in-out infinite alternate;color:#fff;padding:80px 0 60px}
+@keyframes drift{from{background-position:0% 0%}to{background-position:100% 100%}}
+.hero .kicker{font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:#9fc4bd;font-weight:700}
+.hero h1{font-size:clamp(30px,5vw,46px);line-height:1.12;margin:14px 0;font-weight:800;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#45d4c6,#7ee08a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{color:#c4dcd8;font-size:clamp(15px,2vw,17.5px);max-width:740px}
+.chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:#dbeee8;font-size:12.5px;padding:5px 12px;border-radius:999px}
+.hero-ctas{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{text-decoration:none;font-size:14px;font-weight:700;padding:11px 20px;border-radius:10px;display:inline-block;transition:transform .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(90deg,#00a499,#27ae60);color:#fff;box-shadow:0 6px 18px rgba(0,120,90,.35)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#eaf1f8;border:1px solid rgba(255,255,255,.25)}
+.hero-stats{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.hstat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 16px}
+.hstat b{display:block;font-size:21px;font-weight:800;font-family:var(--mono)}
+.hstat span{font-size:12.5px;color:#a9c4bb}
+section.block{padding:60px 0 24px}
+.sec-head .idx{font-family:var(--mono);font-size:12.5px;color:var(--teal);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.sec-head h2{font-size:clamp(22px,3vw,28px);font-weight:800;margin-top:4px}
+.sec-head p{color:var(--muted);font-size:14.5px;max-width:780px;margin-top:6px}
+.callouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-bottom:22px}
+.callout{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.callout b{display:block;font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:4px}
+.callout.pick b{color:var(--teal)}.callout.miss b{color:var(--amber,#D35400)}
+.callout p{font-size:14px}
+.sector-h{font-size:16px;font-weight:800;margin:26px 0 12px;display:flex;align-items:center;gap:10px}
+.sector-h .sq{width:12px;height:12px;border-radius:3px;display:inline-block}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:16px;box-shadow:var(--shadow);transition:transform .25s}
+.card:hover{transform:translateY(-4px)}
+.card .rk{font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:700}
+.card .nm{font-size:14.5px;font-weight:800;margin:4px 0 8px;min-height:42px}
+.card .pb{display:inline-block;font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:10px;background:color-mix(in srgb,var(--green) 15%,transparent);color:var(--green)}
+.card .sc{font-size:28px;font-weight:800;font-family:var(--mono)}
+.bar{height:6px;border-radius:99px;background:var(--surface2);margin:8px 0 10px;overflow:hidden}.bar i{display:block;height:100%;background:var(--teal)}
+.card .mt{font-size:12px;color:var(--muted);font-family:var(--mono)}
+.card.ag .bar i{background:var(--green)}
+.model-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:6px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px;box-shadow:var(--shadow)}
+.panel h3{font-size:15px;font-weight:800;margin-bottom:10px}
+.panel table{width:100%;border-collapse:collapse;font-size:13.5px}
+.panel td,.panel th{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}
+.panel tr:last-child td{border-bottom:none}
+.panel .num{font-size:13px}
+.caveat{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--amber,#D35400);border-radius:12px;padding:14px 18px;font-size:13.5px}
+.table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);overflow-x:auto}
+table.rank{width:100%;border-collapse:collapse;font-size:13.5px;min-width:900px}
+table.rank thead th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);padding:13px 14px;border-bottom:1px solid var(--line);cursor:pointer;white-space:nowrap;position:sticky;top:0;background:var(--surface)}
+table.rank th:hover{color:var(--text)}
+table.rank th::after{content:" \2195";opacity:.35;font-size:10px}
+table.rank th.sort-asc::after{content:" \2191";opacity:1}
+table.rank th.sort-desc::after{content:"\2193";opacity:1}
+table.rank td{padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.rank tr:last-child td{border-bottom:none}
+table.rank th.num,table.rank td.num{text-align:right;font-family:var(--mono);font-size:12.6px}
+table.rank tbody tr.ch{background:color-mix(in srgb,var(--green) 6%,transparent)}
+table.rank tbody tr:hover{background:var(--surface2)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:8px;vertical-align:1px}
+.verd{font-size:10.5px;font-weight:700;padding:2.5px 9px;border-radius:999px}
+.verd.ch{background:color-mix(in srgb,var(--green) 15%,transparent);color:var(--green)}
+.verd.es{background:var(--surface2);color:var(--muted)}
+figure{background:#fff;border:1px solid var(--line);border-radius:13px;padding:12px;margin-bottom:16px;box-shadow:var(--shadow);cursor:zoom-in;transition:transform .25s}
+figure:hover{transform:translateY(-3px)}
+figure img{width:100%;height:auto;border-radius:8px;display:block}
+figcaption{font-size:12.5px;color:var(--muted);padding:9px 5px 3px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:16px}
+.algo-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin:24px 0 12px}
+.algos{display:flex;flex-wrap:wrap;gap:10px}
+.algo{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13px}
+.algo b{display:block}.algo span{font-size:11.5px;color:var(--muted)}
+.repro{margin-top:16px;font-size:13px}
+.repro code{background:var(--surface2);border:1px solid var(--line);border-radius:7px;padding:10px 14px;display:inline-block;font-family:var(--mono);font-size:12.5px}
+.src-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.src-panel{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px;box-shadow:var(--shadow)}
+.src-panel h3{font-size:15px;font-weight:800;margin-bottom:10px}
+.src-panel ul{list-style:none}
+.src-panel li{font-size:13px;color:var(--muted);padding:6px 0 6px 20px;position:relative;border-bottom:1px solid var(--line)}
+.src-panel li:last-child{border-bottom:none}
+.src-panel li::before{content:"\25B8";position:absolute;left:4px;color:var(--teal)}
+footer{margin-top:60px;border-top:1px solid var(--line);padding:34px 0 46px;color:var(--muted);font-size:13px}
+.foot-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:14px}
+.foot-links a{text-decoration:none;font-weight:600;color:var(--text)}
+.foot-links a:hover{color:var(--teal)}
+#lightbox{position:fixed;inset:0;z-index:100;background:rgba(8,12,22,.86);display:none;align-items:center;justify-content:center;flex-direction:column;padding:28px;cursor:zoom-out}
+#lightbox.open{display:flex}
+#lightbox img{max-width:min(94vw,1400px);max-height:82vh;border-radius:10px;background:#fff}
+#lightbox figcaption{color:#c8d4e2;padding-top:12px;font-size:13px}
+#toTop{position:fixed;right:22px;bottom:22px;z-index:60;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--text);font-size:17px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;box-shadow:var(--shadow)}
+#toTop.show{opacity:1;pointer-events:auto}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
+.reveal.visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero{animation:none}.reveal{opacity:1;transform:none;transition:none}.btn:hover,.card:hover,figure:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="mark">&#9670;</span> ML Niche Challengers</a>
+    <nav class="nav-links">
+      <a href="#results">Results</a><a href="#model">Model</a><a href="#predictions">Predictions</a><a href="#charts">Charts</a><a href="#method">Method</a><a href="#sources">Sources</a>
+    </nav>
+    <a class="nav-cta" href="https://github.com/danielosinor123-gif/ds-ml-niche-challengers" target="_blank" rel="noopener">GitHub &#8599;</a>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div class="kicker">Supervised ML &middot; forecast 2026&ndash;2030</div>
+    <h1>The <em>NEXT</em> Challenger Niches<br>inside Machine Learning</h1>
+    <p class="sub">Inside Healthcare and Agriculture, which ML niches are breaking out? A supervised classifier reads <b>only 2015&ndash;2019 signals</b> and predicts challengers with a leave-one-out AUC of <b>0.90</b> &mdash; paired with a 2026&ndash;2030 ensemble forecast of all 18 niches.</p>
+    <div class="chips">
+      <span class="chip">18 ML niches</span><span class="chip">9 early-window features</span><span class="chip">no temporal leakage</span><span class="chip">LOOCV model selection</span><span class="chip">90% bootstrap CIs</span><span class="chip">seeded &middot; reproducible</span>
+    </div>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#predictions">All 18 predictions &darr;</a>
+      <a class="btn btn-ghost" href="outputs/reports/summary_report.md">Full report &#128196;</a>
+      <a class="btn btn-ghost" href="https://github.com/danielosinor123-gif/ds-ml-industry-prospects" target="_blank" rel="noopener">Sister project &#8599;</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><b>0.90</b><span>LOOCV AUC &middot; random forest champion</span></div>
+      <div class="hstat"><b>9 / 18</b><span>niche challengers flagged (prob &ge; 0.5)</span></div>
+      <div class="hstat"><b>+51%</b><span>top forecast CAGR &middot; Ambient Clinical Documentation</span></div>
+      <div class="hstat"><b>83%</b><span>out-of-fold classification accuracy</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<section class="block reveal" id="results">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx">01 &middot; Results</div>
+      <h2>The predicted challenger niches</h2>
+      <p>Probability = what the 2015&ndash;2019 data supports. Prospect score = where the 2026&ndash;2030 forecast says the opportunity is. Confirmed challengers win on both axes.</p>
+    </div>
+    <div class="callouts">
+      <div class="callout pick"><b>Top overall pick</b><p><b>Ambient Clinical Documentation</b> &mdash; flagged challenger (P=0.68) <i>and</i> highest prospect score of all 18 niches (81.5, +51% CAGR to 2030). The GenAI scribe wave, in numbers.</p></div>
+      <div class="callout miss"><b>The instructive miss</b><p><b>Carbon & Sustainability MRV</b> scores just P=0.32 despite a 73.7 prospect score &mdash; it barely existed before 2021, so the early-window classifier can't see it. Probability &ne; promise; use both axes.</p></div>
+    </div>
+
+    <div class="sector-h"><span class="sq" style="background:#00A499"></span>Healthcare &mdash; 5 predicted challengers</div>
+    <div class="cards">
+      <div class="card"><div class="rk">P = 0.68</div><div class="nm">Ambient Clinical Documentation</div><span class="pb">PREDICTED CHALLENGER</span><div class="sc">81.5</div><div class="bar"><i style="width:81.5%"></i></div><div class="mt">+51.0% CAGR &middot; $5.3B by 2030</div></div>
+      <div class="card"><div class="rk">P = 0.94</div><div class="nm">Drug Discovery & Development</div><span class="pb">PREDICTED CHALLENGER</span><div class="sc">55.0</div><div class="bar"><i style="width:55%"></i></div><div class="mt">+31.1% CAGR &middot; $14.4B by 2030</div></div>
+      <div class="card"><div class="rk">P = 0.83</div><div class="nm">Virtual Assistants & Mental-Health AI</div><span class="pb">PREDICTED CHALLENGER</span><div class="sc">49.6</div><div class="bar"><i style="width:49.6%"></i></div><div class="mt">+34.4% CAGR &middot; $5.0B by 2030</div></div>
+      <div class="card"><div class="rk">P = 0.99</div><div class="nm">Genomics & Precision Medicine</div><span class="pb">PREDICTED CHALLENGER</span><div class="sc">48.0</div><div class="bar"><i style="width:48%"></i></div><div class="mt">+30.9% CAGR &middot; $9.0B by 2030</div></div>
+      <div class="card"><div class="rk">P = 0.93</div><div class="nm">Remote Patient Monitoring & Wearables</div><span class="pb">PREDICTED CHALLENGER</span><div class="sc">43.1</div><div class="bar"><i style="width:43.1%"></i></div><div class="mt">+32.3% CAGR &middot; $6.8B by 2030</div></div>
+    </div>
+
+    <div class="sector-h"><span class="sq" style="background:#27AE60"></span>Agriculture &mdash; 4 predicted challengers</div>
+    <div class="cards">
+      <div class="card ag"><div class="rk">P = 0.98</div><div class="nm">Autonomous Equipment & Field Robotics</div><span class="pb">PREDICTED CHALLENGER</span><div class="sc">78.5</div><div class="bar"><i style="width:78.5%"></i></div><div class="mt">+31.3% CAGR &middot; $2.0B by 2030</div></div>
+      <div class="card ag"><div class="rk">P = 0.99</div><div class="nm">Indoor & Vertical Farming Optimization</div><span class="pb">PREDICTED CHALLENGER</span><div class="sc">68.0</div><div class="bar"><i style="width:68%"></i></div><div class="mt">+31.1% CAGR &middot; $1.2B by 2030</div></div>
+      <div class="card ag"><div class="rk">P = 0.90</div><div class="nm">ML-Guided Seed Breeding & Gene Editing</div><span class="pb">PREDICTED CHALLENGER</span><div class="sc">63.4</div><div class="bar"><i style="width:63.4%"></i></div><div class="mt">+30.5% CAGR &middot; $1.0B by 2030</div></div>
+      <div class="card ag"><div class="rk">P = 0.96</div><div class="nm">Livestock Monitoring & Health Vision</div><span class="pb">PREDICTED CHALLENGER</span><div class="sc">62.7</div><div class="bar"><i style="width:62.7%"></i></div><div class="mt">+28.4% CAGR &middot; $1.4B by 2030</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal" id="model">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx">02 &middot; Model</div>
+      <h2>How challengers are detected</h2>
+      <p>Features come from 2015&ndash;2019 only; the label is the 2019&rarr;2025 outcome (above-median within-sector share gain). Two candidate models, leave-one-out cross-validated over 18 folds; the champion is refit to emit final probabilities.</p>
+    </div>
+    <div class="model-grid">
+      <div class="panel">
+        <h3>Model card &mdash; LOOCV</h3>
+        <table>
+          <tr><th>Model</th><th>AUC</th><th>Accuracy</th></tr>
+          <tr><td><b>Random Forest</b> &middot; 500 trees, depth 3 <span class="verd ch">CHAMPION</span></td><td class="num">0.901</td><td class="num">83%</td></tr>
+          <tr><td>Logistic Regression &middot; L2, standardized</td><td class="num">0.778</td><td class="num">83%</td></tr>
+        </table>
+      </div>
+      <div class="panel">
+        <h3>The nine early-window features</h3>
+        <table>
+          <tr><td>Early growth (CAGR &rsquo;15&ndash;&rsquo;19)</td><td>Investment intensity</td></tr>
+          <tr><td>Growth acceleration</td><td>Investment acceleration</td></tr>
+          <tr><td>Patent velocity</td><td>Adoption level (2019)</td></tr>
+          <tr><td>Adoption slope &rsquo;15&ndash;&rsquo;19</td><td>Within-sector share (2019)</td></tr>
+          <tr><td>Early share gain &rsquo;15&ndash;&rsquo;19</td><td>&mdash;</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="caveat"><b>Honest caveat:</b> the bundled panel is benchmark-calibrated synthetic data, so features and labels share a generating process &mdash; the AUC demonstrates the <i>method</i>, not real-world skill. On a real panel (<span class="num">--from-csv</span>) the identical pipeline runs unchanged; expect AUC to fall and importances to become genuinely informative.</div>
+  </div>
+</section>
+
+<section class="block reveal" id="predictions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx">03 &middot; Predictions</div>
+      <h2>All 18 niches, every signal</h2>
+      <p>Click any column header to sort. Green rows = predicted challengers (P &ge; 0.5). Share &Delta; = within-sector share gain 2019&rarr;2025 (the label the model was trained to predict).</p>
+    </div>
+    <div class="table-wrap">
+    <table class="rank" id="rankTable">
+      <thead><tr>
+        <th data-type="str">Niche</th><th data-type="str">Sector</th><th class="num" data-type="num">P(chall)</th>
+        <th data-type="str">Verdict</th><th class="num" data-type="num">Share &Delta;</th>
+        <th class="num" data-type="num">Score</th><th class="num" data-type="num">CAGR</th><th class="num" data-type="num">2030</th>
+      </tr></thead>
+      <tbody>
+      <tr class="ch"><td class="ind"><span class="dot" style="background:#00A499"></span>Genomics & Precision Medicine</td><td>Healthcare</td><td class="num" data-v="0.986">0.99</td><td><span class="verd ch">Predicted challenger</span></td><td class="num" data-v="4.0">+4.0 pp</td><td class="num" data-v="48.0">48.0</td><td class="num" data-v="30.9">+30.9%</td><td class="num" data-v="9.0">$9.0B</td></tr>
+      <tr class="ch"><td class="ind"><span class="dot" style="background:#00A499"></span>Drug Discovery & Development</td><td>Healthcare</td><td class="num" data-v="0.943">0.94</td><td><span class="verd ch">Predicted challenger</span></td><td class="num" data-v="6.9">+6.9 pp</td><td class="num" data-v="55.0">55.0</td><td class="num" data-v="31.1">+31.1%</td><td class="num" data-v="14.4">$14.4B</td></tr>
+      <tr class="ch"><td class="ind"><span class="dot" style="background:#00A499"></span>Remote Patient Monitoring & Wearables</td><td>Healthcare</td><td class="num" data-v="0.928">0.93</td><td><span class="verd ch">Predicted challenger</span></td><td class="num" data-v="3.2">+3.2 pp</td><td class="num" data-v="43.1">43.1</td><td class="num" data-v="32.3">+32.3%</td><td class="num" data-v="6.8">$6.8B</td></tr>
+      <tr class="ch"><td class="ind"><span class="dot" style="background:#00A499"></span>Virtual Assistants & Mental-Health AI</td><td>Healthcare</td><td class="num" data-v="0.827">0.83</td><td><span class="verd ch">Predicted challenger</span></td><td class="num" data-v="2.5">+2.5 pp</td><td class="num" data-v="49.6">49.6</td><td class="num" data-v="34.4">+34.4%</td><td class="num" data-v="5.0">$5.0B</td></tr>
+      <tr class="ch"><td class="ind"><span class="dot" style="background:#00A499"></span>Ambient Clinical Documentation</td><td>Healthcare</td><td class="num" data-v="0.682">0.68</td><td><span class="verd ch">Predicted challenger</span></td><td class="num" data-v="2.3">+2.3 pp</td><td class="num" data-v="81.5">81.5</td><td class="num" data-v="51.0">+51.0%</td><td class="num" data-v="5.3">$5.3B</td></tr>
+      <tr><td class="ind"><span class="dot" style="background:#00A499"></span>Synthetic Data & Trial Digital Twins</td><td>Healthcare</td><td class="num" data-v="0.259">0.26</td><td><span class="verd es">Established</span></td><td class="num" data-v="1.6">+1.6 pp</td><td class="num" data-v="47.5">47.5</td><td class="num" data-v="38.2">+38.2%</td><td class="num" data-v="3.1">$3.1B</td></tr>
+      <tr><td class="ind"><span class="dot" style="background:#00A499"></span>Outbreak & Epidemiological Forecasting</td><td>Healthcare</td><td class="num" data-v="0.110">0.11</td><td><span class="verd es">Established</span></td><td class="num" data-v="-0.5">&minus;0.5 pp</td><td class="num" data-v="5.8">5.8</td><td class="num" data-v="16.8">+16.8%</td><td class="num" data-v="1.1">$1.1B</td></tr>
+      <tr><td class="ind"><span class="dot" style="background:#00A499"></span>Admin Automation & Revenue Cycle</td><td>Healthcare</td><td class="num" data-v="0.034">0.03</td><td><span class="verd es">Established</span></td><td class="num" data-v="-5.5">&minus;5.5 pp</td><td class="num" data-v="20.8">20.8</td><td class="num" data-v="15.3">+15.3%</td><td class="num" data-v="6.3">$6.3B</td></tr>
+      <tr><td class="ind"><span class="dot" style="background:#00A499"></span>Medical Imaging & Diagnostics</td><td>Healthcare</td><td class="num" data-v="0.026">0.03</td><td><span class="verd es">Established</span></td><td class="num" data-v="-6.4">&minus;6.4 pp</td><td class="num" data-v="32.1">32.1</td><td class="num" data-v="14.1">+14.1%</td><td class="num" data-v="9.5">$9.5B</td></tr>
+      <tr><td class="ind"><span class="dot" style="background:#00A499"></span>Clinical Decision Support</td><td>Healthcare</td><td class="num" data-v="0.0">0.00</td><td><span class="verd es">Established</span></td><td class="num" data-v="-8.1">&minus;8.1 pp</td><td class="num" data-v="14.5">14.5</td><td class="num" data-v="10.9">+10.9%</td><td class="num" data-v="5.0">$5.0B</td></tr>
+      <tr class="ch"><td class="ind"><span class="dot" style="background:#27AE60"></span>Indoor & Vertical Farming Optimization</td><td>Agriculture</td><td class="num" data-v="0.992">0.99</td><td><span class="verd ch">Predicted challenger</span></td><td class="num" data-v="3.9">+3.9 pp</td><td class="num" data-v="68.0">68.0</td><td class="num" data-v="31.1">+31.1%</td><td class="num" data-v="1.2">$1.2B</td></tr>
+      <tr class="ch"><td class="ind"><span class="dot" style="background:#27AE60"></span>Autonomous Equipment & Field Robotics</td><td>Agriculture</td><td class="num" data-v="0.982">0.98</td><td><span class="verd ch">Predicted challenger</span></td><td class="num" data-v="5.4">+5.4 pp</td><td class="num" data-v="78.5">78.5</td><td class="num" data-v="31.3">+31.3%</td><td class="num" data-v="2.0">$2.0B</td></tr>
+      <tr class="ch"><td class="ind"><span class="dot" style="background:#27AE60"></span>Livestock Monitoring & Health Vision</td><td>Agriculture</td><td class="num" data-v="0.964">0.96</td><td><span class="verd ch">Predicted challenger</span></td><td class="num" data-v="4.0">+4.0 pp</td><td class="num" data-v="62.7">62.7</td><td class="num" data-v="28.4">+28.4%</td><td class="num" data-v="1.4">$1.4B</td></tr>
+      <tr class="ch"><td class="ind"><span class="dot" style="background:#27AE60"></span>ML-Guided Seed Breeding & Gene Editing</td><td>Agriculture</td><td class="num" data-v="0.900">0.90</td><td><span class="verd ch">Predicted challenger</span></td><td class="num" data-v="4.0">+4.0 pp</td><td class="num" data-v="63.4">63.4</td><td class="num" data-v="30.5">+30.5%</td><td class="num" data-v="1.0">$1.0B</td></tr>
+      <tr><td class="ind"><span class="dot" style="background:#27AE60"></span>Carbon & Sustainability Analytics (MRV)</td><td>Agriculture</td><td class="num" data-v="0.324">0.32</td><td><span class="verd es">Established</span></td><td class="num" data-v="2.7">+2.7 pp</td><td class="num" data-v="73.7">73.7</td><td class="num" data-v="36.3">+36.3%</td><td class="num" data-v="0.863">$863M</td></tr>
+      <tr><td class="ind"><span class="dot" style="background:#27AE60"></span>Pest & Disease Early Warning</td><td>Agriculture</td><td class="num" data-v="0.05">0.05</td><td><span class="verd es">Established</span></td><td class="num" data-v="-4.3">&minus;4.3 pp</td><td class="num" data-v="10.0">10.0</td><td class="num" data-v="12.0">+12.0%</td><td class="num" data-v="0.516">$516M</td></tr>
+      <tr><td class="ind"><span class="dot" style="background:#27AE60"></span>Remote Sensing & Crop Scouting</td><td>Agriculture</td><td class="num" data-v="0.0">0.00</td><td><span class="verd es">Established</span></td><td class="num" data-v="-8.2">&minus;8.2 pp</td><td class="num" data-v="24.3">24.3</td><td class="num" data-v="10.6">+10.6%</td><td class="num" data-v="1.263">$1.3B</td></tr>
+      <tr><td class="ind"><span class="dot" style="background:#27AE60"></span>Yield Prediction & Farm Analytics</td><td>Agriculture</td><td class="num" data-v="0.0">0.00</td><td><span class="verd es">Established</span></td><td class="num" data-v="-7.4">&minus;7.4 pp</td><td class="num" data-v="25.4">25.4</td><td class="num" data-v="13.3">+13.3%</td><td class="num" data-v="1.229">$1.2B</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal" id="charts">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx">04 &middot; Charts</div>
+      <h2>Visual evidence</h2>
+      <p>Click any chart to enlarge.</p>
+    </div>
+    <figure><img src="outputs/charts/01_challenger_probability.png" alt="Predicted challenger probability by niche"><figcaption>Predicted challenger probability across all 18 niches &mdash; green zone = predicted challengers.</figcaption></figure>
+    <figure><img src="outputs/charts/02_prob_vs_score.png" alt="Probability vs prospect score quadrant map"><figcaption>The verdict map: challenger probability &times; 2026&ndash;2030 prospect score.</figcaption></figure>
+    <div class="grid2">
+      <figure><img src="outputs/charts/03_market_trajectories.png" alt="Niche market trajectories by sector"><figcaption>Niche market trajectories per sector, challengers emphasised with 90% CI bands.</figcaption></figure>
+      <figure><img src="outputs/charts/04_feature_importance.png" alt="Feature importance"><figcaption>Feature importance &mdash; logistic coefficients (signed) and forest importances.</figcaption></figure>
+      <figure><img src="outputs/charts/05_roc_curves.png" alt="LOOCV ROC curves"><figcaption>Leave-one-out ROC for both candidate models; champion in teal.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block reveal" id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx">05 &middot; Method</div>
+      <h2>Two layers, one verdict</h2>
+      <p>A supervised classifier (does the early data say this niche is breaking out?) paired with the same backtested ensemble forecast as the sister project (how big does it get by 2030?).</p>
+    </div>
+    <div class="algo-title">Algorithms, formally</div>
+    <div class="algos">
+      <div class="algo"><b>Random forest classifier</b><span>500 trees, depth 3 &mdash; LOOCV champion</span></div>
+      <div class="algo"><b>L2 logistic regression</b><span>standardized features &mdash; interpretable baseline</span></div>
+      <div class="algo"><b>Leave-one-out cross-validation</b><span>18 folds &mdash; honest model selection</span></div>
+      <div class="algo"><b>Log-linear OLS growth regression</b><span>forecast layer, log(y) ~ t</span></div>
+      <div class="algo"><b>Damped Holt's trend</b><span>Gardner & McKenzie (1985), ETS(A,Ad,N)-style</span></div>
+      <div class="algo"><b>Residual bootstrap intervals</b><span>1,000 mixture-simulated paths, 90% CI</span></div>
+      <div class="algo"><b>Pearl&ndash;Reed logistic S-curve</b><span>adoption projection per niche</span></div>
+    </div>
+    <div class="repro"><code>pip install -r requirements.txt && python main.py</code> &nbsp;&rarr;&nbsp; panel &rarr; forecast &rarr; score &rarr; classifier &rarr; charts &rarr; report, seeded and reproducible.</div>
+  </div>
+</section>
+
+<section class="block reveal" id="sources">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="idx">06 &middot; Sources & limitations</div>
+      <h2>Data provenance, stated plainly</h2>
+      <p>Benchmark-calibrated panel: every 2025 niche value sits inside published ranges. The pipeline runs unchanged on real data via <span class="num">--from-csv</span>.</p>
+    </div>
+    <div class="src-grid">
+      <div class="src-panel">
+        <h3>Calibration sources</h3>
+        <ul>
+          <li>Grand View Research &mdash; AI in Medical Imaging, Drug Discovery, Genomics</li>
+          <li>CB Insights / PitchBook &mdash; ambient-AI scribe funding wave (2023&ndash;25)</li>
+          <li>MarketsandMarkets / Precedence &mdash; Precision Agriculture, Agricultural Robots, Livestock Monitoring</li>
+          <li>Climate-tech MRV market reporting (soil carbon, Scope-3 verification)</li>
+          <li>McKinsey State of AI &middot; Stanford HAI AI Index &middot; US BLS</li>
+        </ul>
+      </div>
+      <div class="src-panel">
+        <h3>Known limitations</h3>
+        <ul>
+          <li>Calibrated synthetic inputs &mdash; classifier AUC is an upper bound (method demo)</li>
+          <li>n = 18 niches &mdash; LOOCV AUC is high-variance at this size</li>
+          <li>Label is relative (above sector-median share gain) &mdash; thresholds shift class balance</li>
+          <li>Forecast layer: short series, iid bootstrap, fixed adoption ceilings, no shocks</li>
+          <li>Niche boundaries overlap &mdash; some double counting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-links">
+      <a href="https://github.com/danielosinor123-gif/ds-ml-niche-challengers" target="_blank" rel="noopener">GitHub &#8599;</a>
+      <a href="https://huggingface.co/spaces/danielaxv3/ds-ml-niche-challengers" target="_blank" rel="noopener">Hugging Face Space &#8599;</a>
+      <a href="https://github.com/danielosinor123-gif/ds-ml-industry-prospects" target="_blank" rel="noopener">Sister project: NEXT Top Industries &#8599;</a>
+      <a href="outputs/reports/summary_report.md">Full report</a>
+      <a href="outputs/predictions.csv">Predictions (CSV)</a>
+      <a href="outputs/challenger_features.csv">Model features (CSV)</a>
+      <a href="data/niche_panel.csv">Panel dataset</a>
+    </div>
+    <p>Benchmark-calibrated data &middot; seeded pipeline (seed 42) &middot; temporal design with no leakage &middot; champion model: random forest, LOOCV AUC 0.90.</p>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">&uarr;</button>
+<div id="lightbox" role="dialog" aria-modal="true"><img src="" alt=""><figcaption></figcaption></div>
+
+<script>
+(function(){
+  var nav=document.getElementById("nav"),toTop=document.getElementById("toTop");
+  window.addEventListener("scroll",function(){nav.classList.toggle("scrolled",window.scrollY>8);toTop.classList.toggle("show",window.scrollY>600);},{passive:true});
+  toTop.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});
+  var rev=document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target);}});},{threshold:0.08});rev.forEach(function(el){io.observe(el);});}
+  else{rev.forEach(function(el){el.classList.add("visible");});}
+  var table=document.getElementById("rankTable");
+  if(table){var ths=table.querySelectorAll("thead th");
+    ths.forEach(function(th,i){th.addEventListener("click",function(){
+      var type=th.getAttribute("data-type")||"str",tbody=table.querySelector("tbody"),
+      rows=Array.prototype.slice.call(tbody.querySelectorAll("tr")),desc=th.classList.contains("sort-asc");
+      ths.forEach(function(h){h.classList.remove("sort-asc","sort-desc");});
+      th.classList.add(desc?"sort-desc":"sort-asc");
+      rows.sort(function(a,b){var ca=a.children[i],cb=b.children[i];
+        if(type==="num"){var va=parseFloat(ca.getAttribute("data-v")),vb=parseFloat(cb.getAttribute("data-v"));return desc?vb-va:va-vb;}
+        var ta=ca.textContent.trim().toLowerCase(),tb=cb.textContent.trim().toLowerCase();return desc?tb.localeCompare(ta):ta.localeCompare(tb);});
+      rows.forEach(function(r){tbody.appendChild(r);});});});}
+  var lb=document.getElementById("lightbox"),lbImg=lb.querySelector("img"),lbCap=lb.querySelector("figcaption");
+  document.querySelectorAll("figure img").forEach(function(img){
+    img.parentElement.addEventListener("click",function(){
+      lbImg.src=img.src;lbImg.alt=img.alt;
+      lbCap.textContent=img.parentElement.querySelector("figcaption").textContent;
+      lb.classList.add("open");document.body.style.overflow="hidden";});});
+  function closeLb(){lb.classList.remove("open");document.body.style.overflow="";lbImg.src="";}
+  lb.addEventListener("click",closeLb);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeLb();});
+})();
+</script>
+
+</body>
+</html>
